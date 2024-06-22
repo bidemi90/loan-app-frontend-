@@ -1,0 +1,67 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+// Thunk to fetch all users from the database
+export const fetchUpdatedAllUsersdata = createAsyncThunk(
+  "admin/fetchUpdatedAllUsersdata",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`http://localhost:8332/loanapp/admingetAllUsers`);
+      const data = await response.json();
+      console.log(response);
+      console.log(data);
+      
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to fetch all users");
+      }
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const initialState = {
+  isFetchingAllUsers: false,
+  allUsers: [],
+  isFetchingAllUsersFailed: null,
+};
+
+const allUsersSlice = createSlice({
+  name: "allUsers",
+  initialState,
+  reducers: {
+    fetchingAllUsers: (state) => {
+      state.isFetchingAllUsers = true;
+      state.allUsers = [];
+      state.isFetchingAllUsersFailed = null;
+    },
+    fetchingAllUsersSuccessful: (state, action) => {
+      state.isFetchingAllUsers = false;
+      state.allUsers = action.payload;
+      state.isFetchingAllUsersFailed = null;
+    },
+    fetchingAllUsersFailed: (state, action) => {
+      state.isFetchingAllUsers = false;
+      state.allUsers = [];
+      state.isFetchingAllUsersFailed = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUpdatedAllUsersdata.pending, (state) => {
+        state.isFetchingAllUsers = true;
+        state.isFetchingAllUsersFailed = null;
+      })
+      .addCase(fetchUpdatedAllUsersdata.fulfilled, (state, action) => {
+        state.isFetchingAllUsers = false;
+        state.allUsers = action.payload.data;
+      })
+      .addCase(fetchUpdatedAllUsersdata.rejected, (state, action) => {
+        state.isFetchingAllUsers = false;
+        state.isFetchingAllUsersFailed = action.payload;
+      });
+  },
+});
+
+export default allUsersSlice.reducer;
+export const { fetchingAllUsers, fetchingAllUsersSuccessful, fetchingAllUsersFailed } = allUsersSlice.actions;

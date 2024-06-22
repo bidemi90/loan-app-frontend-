@@ -1,0 +1,432 @@
+* {
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  background-color: rgb(255, 255, 255);
+}
+nav {
+  color: rgb(0, 70, 0);
+}
+p {
+  color: rgb(0, 70, 0);
+}
+.usernav {
+  height: 70px;
+  text-transform: capitalize;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: large;
+  padding: 20px 20px;
+  z-index: 99;
+}
+
+.usernav .clickdivinnav {
+  width: 60%;
+  display: flex;
+}
+
+.usernav2 {
+  height: 70px;
+  text-transform: capitalize;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: large;
+  padding: 20px 20px;
+  z-index: 99;
+}
+.usernav2 {
+  display: none;
+}
+
+.usernav {
+  height: 70px;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: large;
+  padding: 20px 20px;
+  z-index: 99;
+}
+.mainuserpagenav2 {
+  height: 70px;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: large;
+  padding: 20px 20px;
+  z-index: 99;
+}
+.mainuserpagenav2 {
+  display: none;
+}
+.mainuserpagenav2 button {
+  font-weight: bold;
+  font-size: large;
+  text-align: left;
+}
+.mainuserpagenavadmin2 {
+  height: 70px;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: large;
+  padding: 20px 20px;
+  z-index: 99;
+}
+.mainuserpagenavadmin2 {
+  display: none;
+}
+.mainuserpagenavadmin2 button {
+  font-weight: bold;
+  font-size: large;
+  text-align: left;
+}
+
+.productdropdown {
+  position: relative;
+}
+.dropshow {
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+.theproductnavdrop {
+  width: 100%;
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgb(146, 182, 219);
+  border-top: 0px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgb(255, 255, 255);
+  display: none;
+}
+
+.productdropdown:focus-within .theproductnavdrop {
+  display: flex;
+}
+
+.butindrop {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+
+.caroselspace {
+  height: 400px;
+  margin: 50px 30px;
+  box-shadow: 0 5px 40px rgb(0, 70, 0);
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+.carouselimgcss {
+  width: 100%;
+}
+
+.textincarocell {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.holdingtextandimgforcarocell {
+  /* display: flex; */
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.backgroundimgforcarocell1 {
+  background-image: url(./assets/6498.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: chartreuse;
+}
+.backgroundimgforcarocell2 {
+  background-image: url(./assets/9879187.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: chartreuse;
+}
+.backgroundimgforcarocell3 {
+  background-image: url(./assets/9957745.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: chartreuse;
+}
+
+@media screen and (max-width: 900px) {
+  .usernav {
+    display: none;
+  }
+  .usernav2 {
+    display: flex;
+  }
+  .textincarocell {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 5px 2px rgb(0, 70, 0);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+}
+
+.mainuserpagenav {
+  display: flex;
+}
+.mainuserpagenav2 {
+  display: none;
+}
+
+.mainuserpagenavadmin {
+  display: flex;
+}
+.mainuserpagenavadmin2 {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .mainuserpagenav {
+    display: none;
+  }
+  .mainuserpagenav2 {
+    display: block;
+    display: flex;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .mainuserpagenavadmin {
+    display: none;
+  }
+  .mainuserpagenavadmin2 {
+    display: block;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carouselimgcss {
+    height: 100%;
+    width: inherit;
+  }
+}
+
+.landingpage1divforimg {
+  max-width: 70%;
+  max-width: 600px;
+  height: fit-content;
+}
+.landingpage1divforimg img {
+  border-radius: 20% 50%;
+}
+.landingtext1 {
+  /* font-weight: 900; */
+  font-size: 50px;
+  color: rgb(0, 70, 0);
+}
+.cardforloantype:hover {
+  transform: scale(1.05);
+  transition: all linear 1s;
+}
+.holdershowcase1 {
+  /* text-align: center; */
+}
+.imgforshowcase1 {
+  border-radius: 50%;
+  height: 60%;
+  width: 80%;
+}
+
+.holderforlogin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.holderforsignup {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.holderforlogin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.holderforthetwo {
+  box-shadow: 0 5px 20px rgb(0, 70, 0);
+  height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.holdingimgandformforloginandsignin {
+}
+.holdingimgandformforloginandsigninimg {
+  background-image: url(./assets/9045616.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+.holdingimgandformforloginandsigninimg1 {
+  background-image: url(./assets/6425322.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.logoholder {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+
+  box-shadow: 0 0px 10px rgb(0, 70, 0);
+  overflow: hidden;
+}
+
+.userhomeprofile {
+  max-width: 80%;
+  margin: auto;
+}
+
+.mainuserpagenav {
+  width: 100%;
+  height: 70px;
+}
+
+.logoimg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 5px 40px rgb(255, 255, 255);
+}
+
+.errormessagey {
+  font-size: 10px;
+}
+
+.profileholderbox {
+  box-shadow: 0 1px 20px rgb(174, 231, 174);
+}
+.laontypeborder {
+  box-shadow: 0 1px 20px rgb(174, 231, 174);
+}
+
+.userprofilepageimg {
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.formdivholder {
+  /* background-image: url(./assets/6425322.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  background-size: cover;
+  min-height: 100%; */
+}
+
+.loadinganimation {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(20, 196, 58, 0.199);
+}
+.loadingimg {
+  border-radius: 50%;
+  border: 2px solid green;
+  transition: linear all 5s;
+width: 50%;
+height: 40%;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0% {
+    width: 50%;
+    height: 40%;
+  }
+  50% {
+    width: 25%;
+    height: 25%;
+  }
+  100% {
+    width: 50%;
+    height: 40%;
+  }
+}
+
+
+
+/* loan request card */
+
+
+
+/* outstanding loan */
+
+.outstandingloantab{
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 100px;
+
+  
+}
+
+.rangeforoutstandingloan{
+  height: 10px;
+  border-radius: 5px;
+  border: 0.5px solid black;
+}
+
+.whatwilldotherange{
+  width: 50%;
+  height: 10px;
+  border-radius: 5px;
+}
