@@ -119,19 +119,14 @@ const Adminviewloanrequest = () => {
             <h2 className="accordion-header text-capitalize text-success">
               <button
                 className="accordion-button text-capitalize bg-success collapsed text-light fs-5"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
+            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
               >
                 Personal Loan Requests
               </button>
             </h2>
             <div
-              id="flush-collapseOne"
-              className="accordion-collapse collapse"
-              data-bs-parent="#accordionFlushExample"
+            id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"
+             
             >
               <div className="accordion-body p-2">
                 <div className="table-responsive-md">

@@ -101,7 +101,9 @@ const Userhome = () => {
           </button>
         </div>
       </section>
-      
+      <h2 className=" text-success text-capitalize text-center">
+        loan type
+      </h2>
       <section className=" d-flex flex-column flex-lg-row m-5 justify-content-evenly  mt-5 mb-5 pt-5">
         <div className="card  cardforloantype col-lg-3 my-3 ">
           <img className="card-img-top" src={landingimg2} alt="Title" />

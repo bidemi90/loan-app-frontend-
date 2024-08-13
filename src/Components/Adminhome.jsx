@@ -31,24 +31,24 @@ const Adminhome = () => {
 
     dispatch(fetchUpdatedAllUsersdata());
     setAllUserData(allUsers);
-    // const fetchAllUsersData = async () => {
-    //   dispatch(fetchingAllUsers());
-    //   try {
-    //     const response = await axios.get(
-    //       "http://localhost:8332/loanapp/admingetAllUsers"
-    //     );
+    const fetchAllUsersData = async () => {
+      dispatch(fetchingAllUsers());
+      try {
+        const response = await axios.get(
+          "http://localhost:8332/loanapp/admingetAllUsers"
+        );
 
-    //     console.log(response.data);
-    //     console.log(response.data.data);
-    //     dispatch(fetchingAllUsersSuccessful(response.data.data));
-    //     if (response.data && response.data.data) {
-    //       setAllUserData(response.data.data);
-    //     }
-    //   } catch (error) {
-    //     dispatch(fetchingAllUsersFailed(error.message));
-    //   }
-    // };
-    // fetchAllUsersData();
+        console.log(response.data);
+        console.log(response.data.data);
+        dispatch(fetchingAllUsersSuccessful(response.data.data));
+        if (response.data && response.data.data) {
+          setAllUserData(response.data.data);
+        }
+      } catch (error) {
+        dispatch(fetchingAllUsersFailed(error.message));
+      }
+    };
+    fetchAllUsersData();
   }, [dispatch]);
 
   return (
