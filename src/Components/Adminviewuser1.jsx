@@ -3,7 +3,12 @@ import Adminnav from "./Adminnav";
 import logoimg from "../assets/download.png";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchingAllUsers, fetchingAllUsersSuccessful, fetchingAllUsersFailed,fetchUpdatedAllUsersdata } from "./Redux/alluserdata";
+import {
+  fetchingAllUsers,
+  fetchingAllUsersSuccessful,
+  fetchingAllUsersFailed,
+  fetchUpdatedAllUsersdata,
+} from "./Redux/alluserdata";
 import axios from "axios";
 
 const Adminviewuser1 = () => {
@@ -26,13 +31,14 @@ const Adminviewuser1 = () => {
   const handleDeleteUser = async () => {
     try {
       // Send a delete request to the server
-      const res= await axios.delete(`http://localhost:8332/loanapp/deleteUserById/${id}`);
+      const res = await axios.delete(
+        `https://loan-app-backend-siin.onrender.com/loanapp/deleteUserById/${id}`
+      );
 
       // Dispatch action to refetch all users
       dispatch(fetchUpdatedAllUsersdata());
       console.log(res.data);
       alert(res.data.message);
-
 
       dispatch(fetchUpdatedAllUsersdata());
       // Navigate back to the admin backend
@@ -46,7 +52,9 @@ const Adminviewuser1 = () => {
   return (
     <>
       <Adminnav />
-      <h3 className="text-capitalize text-center text-success m-3">User Details</h3>
+      <h3 className="text-capitalize text-center text-success m-3">
+        User Details
+      </h3>
 
       {userDetails ? (
         <div className="card shadow col-10 border-2 border-success mt-4 m-auto bg-success">
@@ -56,7 +64,8 @@ const Adminviewuser1 = () => {
           <div className="card-body text-light">
             <h5 className="card-title">User Details</h5>
             <p className="card-text text-light text-capitalize">
-              <strong>Name:</strong> {userDetails.surname} {userDetails.firstName} {userDetails.lastName}
+              <strong>Name:</strong> {userDetails.surname}{" "}
+              {userDetails.firstName} {userDetails.lastName}
             </p>
             <p className="card-text text-light">
               <strong>Email:</strong> {userDetails.email}
@@ -74,7 +83,7 @@ const Adminviewuser1 = () => {
               <strong>Employment Status:</strong> {userDetails.employmentStatus}
             </p>
             <p className="card-text text-light">
-              <strong>Annual Income:</strong> ${userDetails.annualIncome}
+              <strong>Annual Income:</strong> ₦{userDetails.annualIncome}
             </p>
             <p className="card-text text-light">
               <strong>NIN:</strong> {userDetails.nin}
@@ -83,22 +92,25 @@ const Adminviewuser1 = () => {
               <strong>BVN:</strong> {userDetails.bvn}
             </p>
             <p className="card-text">
-              <small className="text-muted text-success">Last updated: {new Date(userDetails.updatedAt).toLocaleString()}</small>
+              <small className="text-muted text-success">
+                Last updated: {new Date(userDetails.updatedAt).toLocaleString()}
+              </small>
             </p>
           </div>
 
           <button
-            title="button will delete user " className="btn btn-danger btn-outline-light w-50 m-auto mt-2 mb-2"
+            title="button will delete user "
+            className="btn btn-danger btn-outline-light w-50 m-auto mt-2 mb-2"
             onClick={handleDeleteUser}
           >
-            Delete User 
+            Delete User
           </button>
         </div>
       ) : (
-        <div className="text-center text-danger mt-5">Loading user details...</div>
+        <div className="text-center text-danger mt-5">
+          Loading user details...
+        </div>
       )}
-
-    
     </>
   );
 };

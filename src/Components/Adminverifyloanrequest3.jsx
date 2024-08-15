@@ -12,9 +12,7 @@ const Adminverifyloanrequest3 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { id } = useParams(); // Get the user ID from the URL params
-
   console.log(id);
-
   const {
     isFetchingPersonalLoanRequests,
     personalLoanRequests,
@@ -38,7 +36,6 @@ const Adminverifyloanrequest3 = () => {
   const [terminationReason, setTerminationReason] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for submission loading
   const [isLoading, setIsLoading] = useState(false); // New state for form submission loading
-
 
   useEffect(() => {
     dispatch(fetchUpdatedPersonalLoanRequests());
@@ -70,7 +67,7 @@ const Adminverifyloanrequest3 = () => {
 
     axios
       .put(
-        `http://localhost:8332/loanapp/editAutoLoanStatus/${id}`,
+        `https://loan-app-backend-siin.onrender.com/loanapp/editAutoLoanStatus/${id}`,
         updatedLoanRequest
       ) // Replace with your actual API endpoint
       .then((response) => {
@@ -94,9 +91,9 @@ const Adminverifyloanrequest3 = () => {
 
   const handleSubmit = (userdata) => {
     console.log(userdata);
-  
+
     setIsLoading(true);
-  
+
     const formData = {
       _id: userdata._id,
       userId: userdata.userId,
@@ -114,10 +111,10 @@ const Adminverifyloanrequest3 = () => {
       terminationreason: userdata.terminationreason,
     };
     console.log(formData);
-  
+
     axios
       .post(
-        "http://localhost:8332/loanapp/submitpaidAutoLoanApplication",
+        "https://loan-app-backend-siin.onrender.com/loanapp/submitpaidAutoLoanApplication",
         formData
       )
       .then((response) => {
@@ -127,7 +124,7 @@ const Adminverifyloanrequest3 = () => {
         );
         alert("Auto loan application payment sent successfully");
         setIsLoading(false);
-  
+
         navigate("/viewloanrequest");
       })
       .catch((error) => {
@@ -136,8 +133,6 @@ const Adminverifyloanrequest3 = () => {
         setIsLoading(false);
       });
   };
-  
-
 
   return (
     <>
@@ -208,7 +203,7 @@ const Adminverifyloanrequest3 = () => {
                       {isLoading ? <Loadinicon /> : "Verify"}{" "}
                       {/* Display loading icon when loading */}
                     </button>
-                    
+
                     <button
                       data-bs-toggle="modal"
                       data-bs-target="#modalId"

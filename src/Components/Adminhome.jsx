@@ -35,7 +35,7 @@ const Adminhome = () => {
       dispatch(fetchingAllUsers());
       try {
         const response = await axios.get(
-          "http://localhost:8332/loanapp/admingetAllUsers"
+          "https://loan-app-backend-siin.onrender.com/loanapp/admingetAllUsers"
         );
 
         console.log(response.data);

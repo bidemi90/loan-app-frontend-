@@ -22,7 +22,7 @@ const Adminsignuppage = () => {
     console.log(values);
     setIsLoading(true); // Show loader
     setTimeout(() => {
-      axios.post("http://localhost:8332/loanapp/adminSignup", {
+      axios.post("https://loan-app-backend-siin.onrender.com/loanapp/adminSignup", {
         "username": values.username,
         "email": values.email,
         "password": values.password,

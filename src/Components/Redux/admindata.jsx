@@ -6,7 +6,7 @@ export const fetchUpdatedAdmindata = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `http://localhost:8332/loanapp/getAdminByEmail/${email}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/getAdminByEmail/${email}`
       );
       const data = await response.json();
       if (!response.ok) {

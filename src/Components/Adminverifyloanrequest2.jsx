@@ -75,7 +75,7 @@ const Adminverifyloanrequest2 = () => {
 
     axios
       .put(
-        `http://localhost:8332/loanapp/editStudentLoanStatus/${id}`,
+        `https://loan-app-backend-siin.onrender.com/loanapp/editStudentLoanStatus/${id}`,
         updatedLoanRequest
       ) // Replace with your actual API endpoint
       .then((response) => {
@@ -125,7 +125,7 @@ const Adminverifyloanrequest2 = () => {
   
     axios
       .post(
-        "http://localhost:8332/loanapp/submitpaidStudentLoanApplication",
+        "https://loan-app-backend-siin.onrender.com/loanapp/submitpaidStudentLoanApplication",
         formData
       )
       .then((response) => {

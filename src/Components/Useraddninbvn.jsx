@@ -32,7 +32,7 @@ const Useraddninbvn = () => {
     setIsLoading(true); // Set loading state to true
 
     try {
-      const res = await axios.post("http://localhost:8332/loanapp/addnin", {
+      const res = await axios.post("https://loan-app-backend-siin.onrender.com/loanapp/addnin", {
         emailorphonernumber: userdata.email,
         nin: values.nin,
       });

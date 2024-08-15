@@ -32,7 +32,7 @@ const Test = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8332/loanapp/uploadimage",
+        "https://loan-app-backend-siin.onrender.com/loanapp/uploadimage",
         data,
         {
           headers: {

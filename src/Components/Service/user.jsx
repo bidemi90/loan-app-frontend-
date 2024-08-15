@@ -8,7 +8,7 @@ export const alluser = (dispatch,values)=>{
     dispatch(featchinguser())
     console.log(values);
     setTimeout(() => {
-        axios.post("http://localhost:8332/loanapp/login", {
+        axios.post("https://loan-app-backend-siin.onrender.com/loanapp/login", {
             emailorphonernumber: values.email,
             password: values.password,
           })

@@ -80,7 +80,7 @@ const Loantype3 = () => {
     console.log(formData);
 
     axios
-      .post("http://localhost:8332/loanapp/submitAutoLoanApplication", formData)
+      .post("https://loan-app-backend-siin.onrender.com/loanapp/submitAutoLoanApplication", formData)
       .then((response) => {
         console.log(
           "Auto loan application submitted successfully:",

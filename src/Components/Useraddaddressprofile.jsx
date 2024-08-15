@@ -32,7 +32,7 @@ const Useraddaddress = () => {
     console.log(values);
     setIsLoading(true); // Set loading state to true
     try {
-      const res = await axios.post("http://localhost:8332/loanapp/updateUserDetails", {
+      const res = await axios.post("https://loan-app-backend-siin.onrender.com/loanapp/updateUserDetails", {
         emailorphonernumber: userdata.email,
         address: values.address,
         dateOfBirth: values.dateOfBirth,

@@ -6,7 +6,7 @@ export const fetchUpdatedonestudentLoanRequests = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `http://localhost:8332/loanapp/fetchoneStudentLoanRequests/${id}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/fetchoneStudentLoanRequests/${id}`
       );
       const data = await response.json();
       if (!response.ok) {

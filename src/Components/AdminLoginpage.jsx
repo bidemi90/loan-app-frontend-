@@ -48,7 +48,7 @@ const AdminLoginpage = () => {
 
     setTimeout(() => {
       axios
-        .post("http://localhost:8332/loanapp/adminLogin", {
+        .post("https://loan-app-backend-siin.onrender.com/loanapp/adminLogin", {
           username: values.username,
           password: values.password,
         })

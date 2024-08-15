@@ -74,7 +74,7 @@ const Loantype1 = () => {
 
     axios
       .post(
-        "http://localhost:8332/loanapp/submitPersonalLoanApplication",
+        "https://loan-app-backend-siin.onrender.com/loanapp/submitPersonalLoanApplication",
         formData
       )
       .then((response) => {

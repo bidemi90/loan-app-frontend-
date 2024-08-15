@@ -149,7 +149,7 @@ const Useroutstadingloan = () => {
     try {
       // Make the axios request to the backend
       const response = await axios.put(
-        `http://localhost:8332/loanapp/editonepaidPersonalLoanStatus/${loanId}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/editonepaidPersonalLoanStatus/${loanId}`
       );
 
       // Handle the response from the backend
@@ -176,7 +176,7 @@ const Useroutstadingloan = () => {
     try {
       // Make the axios request to the backend
       const response = await axios.put(
-        `http://localhost:8332/loanapp/editonepaidStudentLoanStatus/${loanId}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/editonepaidStudentLoanStatus/${loanId}`
       );
 
       // Handle the response from the backend
@@ -203,7 +203,7 @@ const Useroutstadingloan = () => {
     try {
       // Make the axios request to the backend
       const response = await axios.put(
-        `http://localhost:8332/loanapp/editonepaidAutoLoanStatus/${loanId}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/editonepaidAutoLoanStatus/${loanId}`
       );
 
       // Handle the response from the backend

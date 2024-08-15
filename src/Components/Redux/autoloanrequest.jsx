@@ -5,7 +5,7 @@ export const fetchUpdatedAutoLoanRequests = createAsyncThunk(
   "autoLoan/fetchUpdatedAutoLoanRequests",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:8332/loanapp/fetchAutoLoanRequests");
+      const response = await fetch("https://loan-app-backend-siin.onrender.com/loanapp/fetchAutoLoanRequests");
       const data = await response.json();
       if (!response.ok) {
         throw new Error(data.message || "Failed to fetch auto loan requests");

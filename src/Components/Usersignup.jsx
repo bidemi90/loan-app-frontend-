@@ -25,7 +25,7 @@ const Usersignup = () => {
     console.log(values);
     setIsLoading(true); // Show loader
     setTimeout(() => {
-      axios.post("http://localhost:8332/loanapp/signup", {
+      axios.post("https://loan-app-backend-siin.onrender.com/loanapp/signup", {
         "firstName": values.firstName,
         "surname": values.surname,
         "lastName": values.lastName,

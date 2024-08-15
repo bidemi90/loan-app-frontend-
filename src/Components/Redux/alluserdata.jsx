@@ -5,7 +5,7 @@ export const fetchUpdatedAllUsersdata = createAsyncThunk(
   "admin/fetchUpdatedAllUsersdata",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:8332/loanapp/admingetAllUsers`);
+      const response = await fetch(`https://loan-app-backend-siin.onrender.com/loanapp/admingetAllUsers`);
       const data = await response.json();
       console.log(response);
       console.log(data);

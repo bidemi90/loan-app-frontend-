@@ -6,7 +6,7 @@ export const fetchUpdatedoneautoLoanRequests = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `http://localhost:8332/loanapp/fetchoneAutoLoanRequests/${id}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/fetchoneAutoLoanRequests/${id}`
       );
       const data = await response.json();
       if (!response.ok) {

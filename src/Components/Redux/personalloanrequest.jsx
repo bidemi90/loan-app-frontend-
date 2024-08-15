@@ -5,7 +5,7 @@ export const fetchUpdatedPersonalLoanRequests = createAsyncThunk(
   "personalLoan/fetchUpdatedPersonalLoanRequests",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:8332/loanapp/fetchPersonalLoanRequests");
+      const response = await fetch("https://loan-app-backend-siin.onrender.com/loanapp/fetchPersonalLoanRequests");
       const data = await response.json();
       if (!response.ok) {
         throw new Error(data.message || "Failed to fetch personal loan requests");

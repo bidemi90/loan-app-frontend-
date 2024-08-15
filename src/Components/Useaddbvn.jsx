@@ -29,7 +29,7 @@ const Useaddbvn = () => {
 
     try {
       // Make API call to add BVN
-      const res = await axios.post('http://localhost:8332/loanapp/addbvn', {
+      const res = await axios.post('https://loan-app-backend-siin.onrender.com/loanapp/addbvn', {
         emailorphonernumber: userdata.email,
         bvn: values.bvn,
       });

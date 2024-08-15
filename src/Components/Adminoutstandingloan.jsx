@@ -151,7 +151,7 @@ const Adminoutstandingloan = () => {
     try {
      
       const mailResponse = await axios.post(
-        `http://localhost:8332/loanapp/send_mailer/${userid}`
+        `https://loan-app-backend-siin.onrender.com/loanapp/send_mailer/${userid}`
       );
   
       // Handle the response from the backend
